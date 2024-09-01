@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using MyGolfApp.Authentication;
 using MyGolfApp.Repository;
 using MyGolfApp.Repository.Context;
 
@@ -15,6 +16,7 @@ builder.Services.AddDbContext<MyGolfAppDbContext>(options =>
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<IPasswordHasher, MyPasswordHasher>();
 builder.Services.AddControllers();
 
 var app = builder.Build();

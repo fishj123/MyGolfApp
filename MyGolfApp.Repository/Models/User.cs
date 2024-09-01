@@ -1,6 +1,8 @@
+using MyGolfApp.Repository.Interfaces;
+
 namespace MyGolfApp.Repository.Models;
 
-public class User
+public class User : IUser
 {
     public int Id { get; set; }
     public string Email { get; set; }
