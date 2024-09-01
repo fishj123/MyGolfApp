@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyGolfApp", "MyGolfApp\MyGolfApp.csproj", "{84E771F9-0429-48AA-B8AE-3CF0A152524A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyGolfApp.Repository", "MyGolfApp.Repository\MyGolfApp.Repository.csproj", "{D9D1DFF5-0465-461C-A794-11CE804C21B1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{84E771F9-0429-48AA-B8AE-3CF0A152524A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84E771F9-0429-48AA-B8AE-3CF0A152524A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84E771F9-0429-48AA-B8AE-3CF0A152524A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84E771F9-0429-48AA-B8AE-3CF0A152524A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9D1DFF5-0465-461C-A794-11CE804C21B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9D1DFF5-0465-461C-A794-11CE804C21B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9D1DFF5-0465-461C-A794-11CE804C21B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9D1DFF5-0465-461C-A794-11CE804C21B1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
