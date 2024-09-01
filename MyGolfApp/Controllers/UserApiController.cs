@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using MyGolfApp.Authentication;
+using MyGolfApp.Interfaces;
 using MyGolfApp.Models;
 using MyGolfApp.Repository;
 using MyGolfApp.Repository.Models;
@@ -12,36 +14,23 @@ namespace MyGolfApp.Controllers;
 [AllowAnonymous]
 public class UserApiController : ControllerBase
 {
-    private readonly IUnitOfWork _unitOfWork;
-    public UserApiController(IUnitOfWork unitOfWork)
+    private readonly IUserService _userService;
+    public UserApiController(IUserService userService)
     {
-        _unitOfWork = unitOfWork;
+        _userService = userService;
     }
-
 
     [HttpPost]
     public ActionResult<int> Post(UserCreate model)
     {
-        var now = DateTime.UtcNow;
-
-        var user = new User()
-        {
-            Email = model.Email,
-            Password = model.Password,
-            ModifiedDate = now,
-            CreateDate = now,
-            Username = model.Username
-        };
-        
-        _unitOfWork.Users.Add(user);
-        var id = _unitOfWork.Complete();
+        var id = _userService.Create(model.Email, model.Username, model.Password);
         return Ok(id);
     }
     
     [HttpGet]
     public ActionResult<IEnumerable<UserResponse>> Get()
     {
-        var users = _unitOfWork.Users.GetAll().ToList();
+        var users = _userService.GetAll();
 
         if (users.Any() == false)
         {
