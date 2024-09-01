@@ -19,7 +19,7 @@ public class MyGolfAppDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
-        // Fluent API configurations, if necessary
-        // modelBuilder.Entity<User>().HasIndex(u => u.Email).IsUnique();
+        // Specify the table name as singular
+        modelBuilder.Entity<User>().ToTable("User");
     }
 }
